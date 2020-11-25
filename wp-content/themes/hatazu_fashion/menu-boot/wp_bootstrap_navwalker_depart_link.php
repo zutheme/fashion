@@ -26,7 +26,8 @@ class wp_bootstrap_navwalker_depart_link extends Walker_Nav_Menu {
 		if($depth === 0){
 			$output .= '<div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--xl">';
 			$output .= '<div class="megamenu megamenu--departments">';
-			$output .=	'<div class="megamenu__body" style="background-image: url('.get_template_directory_uri().'/images/megamenu/megamenu-1.jpg);">';
+			//$output .=	'<div class="megamenu__body" style="background-image: url('.get_template_directory_uri().'/images/megamenu/megamenu-1.jpg);">';
+			$output .=	'<div class="megamenu__body">';
 			$output .=	'<div class="row">';
 			$output .=		'<div class="col-3s">';
 			$output .=		'<ul class="megamenu__links megamenu__links--level--0 col-'.$col.'">';
