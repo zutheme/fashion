@@ -57,7 +57,7 @@ if ( $show_downloads ) {
 
 			foreach ( $order_items as $item_id => $item ) {
 				$product = $item->get_product();
-				
+
 				wc_get_template(
 					'order/order-details-item.php',
 					array(
@@ -67,12 +67,33 @@ if ( $show_downloads ) {
 						'show_purchase_note' => $show_purchase_note,
 						'purchase_note'      => $product ? $product->get_purchase_note() : '',
 						'product'            => $product,
-						'src' => $src, 
 					)
 				);
 			}
 
 			do_action( 'woocommerce_order_details_after_order_table_items', $order );
+			?>
+			<?php
+			// do_action( 'woocommerce_order_details_before_order_table_items', $order );
+
+			// foreach ( $order_items as $item_id => $item ) {
+			// 	$product = $item->get_product();
+				
+			// 	wc_get_template(
+			// 		'order/order-details-item.php',
+			// 		array(
+			// 			'order'              => $order,
+			// 			'item_id'            => $item_id,
+			// 			'item'               => $item,
+			// 			'show_purchase_note' => $show_purchase_note,
+			// 			'purchase_note'      => $product ? $product->get_purchase_note() : '',
+			// 			'product'            => $product,
+			// 			'src' => $src, 
+			// 		)
+			// 	);
+			// }
+
+			//do_action( 'woocommerce_order_details_after_order_table_items', $order );
 			?>
 		</tbody>
 
