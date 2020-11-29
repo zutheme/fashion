@@ -3,13 +3,14 @@ function basicAuth(key, secret) {
     let hash = btoa(key + ':' + secret);
     return "Basic " + hash;
 }
+var _url_blog = htzwpApi.url_blog;
+_url_blog = _url_blog.replace(/^http:\/\//i, 'https://');
 function filter_product(_lst_filter) {
   var e_htz_popup_processing = document.getElementsByClassName("htz-popup-processing")[0];
   e_htz_popup_processing.style.display = "block";
-  const _url_blog = htzwpApi.url_blog;
   let auth = basicAuth(htzwpApi.htzClientKey, htzwpApi.htzClientSecret);
   xhr = new XMLHttpRequest();
-  var url = htzwpApi.url_blog + '/wp-json/wc/v3/products?'+_lst_filter;
+  var url = _url_blog + '/wp-json/wc/v3/products?'+_lst_filter;
   xhr.open("GET", url, true);
   xhr.setRequestHeader("Content-type", "application/json");
   xhr.setRequestHeader('Authorization', auth);
@@ -279,10 +280,11 @@ function add_product_ajax(element) {
   var e_nav_panel_indicators = document.getElementsByClassName("nav-panel__indicators")[0];
   var e_indicator__value = e_nav_panel_indicators.getElementsByClassName("item-cart")[0];
   e_htz_popup_processing.style.display = "block";
-  const _url_blog = htzwpApi.url_blog;
+  // const _url_blog = htzwpApi.url_blog;
   var _security = htzwpApi.nonce;
   xhr = new XMLHttpRequest();
   var url = htzwpApi.ajax_url+"?action=woocommerce_ajax_add_to_cart";
+  console.log(url);
   var params = 'security='+_security+'&product_id='+_product_id+'&quantity='+_quantity+'&variation_id='+_variation_id;
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Accept", "application/json");

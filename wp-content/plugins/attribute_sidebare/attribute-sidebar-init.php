@@ -32,7 +32,7 @@ function enqueue_related_pages_scripts_and_styles(){
 add_action('admin_enqueue_scripts','enqueue_related_pages_scripts_and_styles');
 function hatazu_client_api_script() {
         if(is_product_category()||is_shop()){
-            wp_enqueue_script( 'client_api_script.js', plugin_dir_url(__FILE__) .'js/client_api_script.js', array(), '0.2.3.0', true );
+            wp_enqueue_script( 'client_api_script.js', plugin_dir_url(__FILE__) .'js/client_api_script.js', array(), '0.2.3.7', true );
         }
         wp_localize_script( 'client_api_script.js', 'htzwpApi', array(
             'root' => esc_url_raw( rest_url() ),
@@ -44,7 +44,7 @@ function hatazu_client_api_script() {
             'arr_attribute' => wc_get_attribute_taxonomies(),
             'ajax_url' => admin_url( 'admin-ajax.php'),
         ));
-        wp_enqueue_script('library-custom.js', plugin_dir_url(__FILE__) . 'js/library-custom.js', array(), '0.0.6.9', true );
+        wp_enqueue_script('library-custom.js', plugin_dir_url(__FILE__) . 'js/library-custom.js', array(), '0.0.7.0', true );
         wp_localize_script( 'library-custom.js', 'wpApiSettings', array(
             'root' => esc_url_raw( rest_url() ),
             'nonce' => wp_create_nonce( 'wp_rest' ),

@@ -1,7 +1,7 @@
 const wooClientKey = 'ck_4884cc4eaa8d315117e3990bcf8c213e0a8a821a';
 const wooClientSecret = 'cs_89f9a54eebf5885bceb89289aa912c382be4c488';
 const _tmp_dir = wpApiSettings.tmp_dir;
-const _url_blog = wpApiSettings.url_blog;
+// const _url_blog = wpApiSettings.url_blog;
 function basicAuth(key, secret) {
     let hash = btoa(key + ':' + secret);
     return "Basic " + hash;
