@@ -241,7 +241,7 @@ add_filter( 'woocommerce_show_variation_price', '__return_true');
 /**
  * Change number of products that are displayed per page (shop page)
  */
-add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
+//add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
 
 function new_loop_shop_per_page( $cols ) {
   // $cols contains the current number of products per page based on the value stored on Options -> Reading
@@ -249,7 +249,7 @@ function new_loop_shop_per_page( $cols ) {
   $cols = 10;
   return $cols;
 }
-
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 24;' ), 20 );
 
 function ld_custom_excerpt_length( $length ) {
     return 15;
