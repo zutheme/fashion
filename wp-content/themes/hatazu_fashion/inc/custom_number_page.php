@@ -62,8 +62,8 @@ function my_cptui_change_posts_per_page( $query ) {
     }
     //if ( is_post_type_archive( 'product' )||$query->is_tax('taxonomy-department') ) {
     //if ( is_post_type_archive( 'product' )||$query->is_tax('taxonomy-department') ) {
-       $query->set( 'posts_per_page', 8 );
+       $query->set( 'posts_per_page', 9 );
     //}
     return $query;
 }
-add_filter( 'pre_get_posts', 'my_cptui_change_posts_per_page' );
+//add_filter( 'pre_get_posts', 'my_cptui_change_posts_per_page' );
