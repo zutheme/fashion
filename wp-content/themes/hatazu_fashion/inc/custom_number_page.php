@@ -66,4 +66,4 @@ function my_cptui_change_posts_per_page( $query ) {
     //}
     return $query;
 }
-//add_filter( 'pre_get_posts', 'my_cptui_change_posts_per_page' );
+add_filter( 'pre_get_posts', 'my_cptui_change_posts_per_page' );
