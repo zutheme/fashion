@@ -5,6 +5,15 @@
 		<p class="result"></p>
 	</div>
 </div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P1W3EPECHW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P1W3EPECHW');
+</script>
 <?php wp_footer(); ?>
 </body>
 </html>
